@@ -1,0 +1,20 @@
+{
+  "name": "crud_app",
+  "version": "1.0.0",
+  "description": "CRUD APP BASIC SET_UP ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "dev": "nodemon server"
+  },
+  "author": "dinesh babu",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "mongoose": "^5.0.18"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
