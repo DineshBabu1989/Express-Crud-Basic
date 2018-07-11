@@ -31,7 +31,6 @@ router.post("/register", function(req, res) {
 //DESC:GET ROUTE FOR GETTING ALL POSTS
 //PUBLIC
 router.get("/allposts", function(req, res) {
-  //mongoose method to find all docs in the data base
   User.find({})
     .then(user => {
       res.json({ user });
@@ -43,10 +42,8 @@ router.get("/allposts", function(req, res) {
 //DESC:PUT ROUTE FOR UPDATING COLLECTIONS
 //PUBLIC
 router.put("/update/:id", function(req, res) {
-  //mongoose method to find a record by id and update
   User.findByIdAndUpdate({ _id: req.params.id }, req.body)
     .then(user => {
-      //make a new mongoose search before returning the response
       User.findOne({ _id: req.params.id }).then(user => {
         res.json({ user });
       });
@@ -58,7 +55,6 @@ router.put("/update/:id", function(req, res) {
 //DESC:DELETE ROUTE FOR DELETING POSTS
 //PUBLIC
 router.delete("/delete/:id", function(req, res) {
-  //mongoose method to find and delete a record by id
   User.findByIdAndRemove({ _id: req.params.id }).then(user => {
     res.json({ user });
   });
